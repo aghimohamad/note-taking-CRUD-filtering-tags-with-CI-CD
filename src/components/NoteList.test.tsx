@@ -1,8 +1,6 @@
-import { render, screen, waitFor } from "../test-utils";
+import { render, screen } from "../test-utils";
 import { describe, expect, it, vitest } from "vitest";
-// import EditNote from "./EditNote";
-import { Note, NoteData, Tag } from "../App";
-import NoteForm from "./NoteForm";
+import { Note, Tag } from "../App";
 import user from "@testing-library/user-event";
 
 import selectEvent from "react-select-event";

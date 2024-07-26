@@ -80,7 +80,7 @@ export default function NoteList({ availableTags, notes, onDeleteTag, onUpdateTa
                 options={availableTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}
-                onChange={(newValue, actionMeta) => {
+                onChange={(newValue) => {
                   setSelectedTags(
                     newValue.map((tag) => {
                       return { label: tag.label, id: tag.value };

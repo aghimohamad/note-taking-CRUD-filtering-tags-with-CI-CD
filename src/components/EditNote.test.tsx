@@ -1,11 +1,9 @@
-import { render , screen } from './test-utils';
+import { render , screen } from '../test-utils';
 import { describe, expect, it, vitest } from 'vitest';
 import EditNote from './EditNote';
-import { NoteData, Tag } from './App';
+import { Tag } from '../App';
 import NoteForm from './NoteForm';
 
-const noteData: NoteData = { title: 'Note1', markdown: 'Content', tags: [{id: '1', label: 'Tag1'}]}
-const availableTags: Tag[] = [{id: '1', label: 'Tag1'}, {id: '2', label: 'Tag2'}]
 
 // Tests
 describe('Renders main page correctly', async () => {

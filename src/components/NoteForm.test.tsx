@@ -1,6 +1,5 @@
-import { render, screen, waitFor } from "../test-utils";
+import { render, screen } from "../test-utils";
 import { describe, expect, it, vitest } from "vitest";
-// import EditNote from "./EditNote";
 import { NoteData, Tag } from "../App";
 import NoteForm from "./NoteForm";
 import user from "@testing-library/user-event";
@@ -79,7 +78,6 @@ describe("NoteForm", () => {
       />
     );
     
-    const form = screen.getByRole("form");
     await user.type(screen.getByRole("textbox", { name: /title/i }), "NewTitle");
     await user.type(screen.getByRole("textbox", { name: /body/i }), "Content");
     await selectEvent.select(screen.getByLabelText(/tags/i), "Tag4");

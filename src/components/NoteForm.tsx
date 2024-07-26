@@ -21,13 +21,11 @@ export default function NoteForm({ onSubmit, onAddTag, availableTags, defaultNot
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-        const title = titleRef.current!.value
-        const markdown = markdownRef.current!.value
+        const title = titleRef.current?.value as string
+        const markdown = markdownRef.current?.value as string
         onSubmit( {title, markdown, tags: selectedTags})
         navigate('..')
     }
-
-    console.log(selectedTags)
 
   return (
     <Form onSubmit={handleSubmit} role="form">
@@ -56,7 +54,7 @@ export default function NoteForm({ onSubmit, onAddTag, availableTags, defaultNot
                 options={availableTags.map((tag) => {
                   return { label: tag.label, value: tag.id }
                 })}
-                              onChange={(newValue, actionMeta) => {
+                              onChange={(newValue) => {
                                   setSelectedTags(newValue.map((tag) => {
                                         return {label: tag.label, id: tag.value}
                                   }
