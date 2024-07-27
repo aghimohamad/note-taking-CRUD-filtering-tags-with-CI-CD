@@ -32,6 +32,9 @@ jobs:
         run: npm run test
    build:
     needs: test
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     outputs:
       script-file: ${{ steps.publish.outputs.script-file }}
