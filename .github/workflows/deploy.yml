@@ -61,6 +61,6 @@ jobs:
           path: './dist'
       - name: deploy
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
